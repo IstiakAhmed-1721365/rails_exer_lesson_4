@@ -1,0 +1,13 @@
+<h1>Article List</h1>
+
+<ul>
+  <% @article.each do |f| %>
+    <li>
+      <a href="/articles/<%= f.id %>">
+        <%= f.title %> | <%= link_to 'Update', edit_article_path(f) %> | <%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Article", new_article_path %>
